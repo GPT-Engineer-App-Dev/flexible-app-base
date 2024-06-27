@@ -11,10 +11,19 @@ const Index = () => {
   const [name, setName] = useState("");
 
   const handleClick = () => {
-    toast({
-      title: `Hello, ${name}!`,
-      description: "This is your personalized greeting.",
-    });
+    console.log("Button clicked");
+    if (name.trim() === "") {
+      toast({
+        title: "Error",
+        description: "Please enter your name.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: `Hello, ${name}!`,
+        description: "This is your personalized greeting.",
+      });
+    }
   };
 
   return (
